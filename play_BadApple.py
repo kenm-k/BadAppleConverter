@@ -34,7 +34,7 @@ def video(text_array, frame_per_time):
     prtText = "" + str(i) + "\n"
     for j in range(fix_height):
       for k in range(fix_width):
-        prtText += "" + ("⬛" if text_array[i] != "□" else "⬜")
+        prtText += "" + ("⬛" if text_array[i] == "□" else "⬜")
         i += 1
       prtText += "\n"
     #os.system('cls')
