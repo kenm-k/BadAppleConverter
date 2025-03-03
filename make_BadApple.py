@@ -48,13 +48,13 @@ for i in tqdm(range(frame)):
     for j in range(fix_height):
         for k in range(fix_width):
             if 0 <= gray_sca[j, k] < 30:
-                text_array[i, j, k] = "□"
+                text_array[i, j, k] = "."
             elif 30 <= gray_sca[j, k] < 80:
-                text_array[i, j, k] = "□"
+                text_array[i, j, k] = "."
             elif 80 <= gray_sca[j, k] < 160:
-                text_array[i, j, k] = "■"
+                text_array[i, j, k] = "#"
             else:
-                text_array[i, j, k] = "■"
+                text_array[i, j, k] = "#"
 
 #ファイル保存フェーズ
 with open("badapple.txt","w") as o:

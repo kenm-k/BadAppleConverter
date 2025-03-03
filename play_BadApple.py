@@ -30,11 +30,12 @@ def video(text_array, frame_per_time):
   base_time = time.time()
   next_time = 0
   i = 0
+  fcount = 1
   while i < len(text_array):
-    prtText = "" + str(i) + "\n"
+    prtText = "" + str(fcount) + "\n"
     for j in range(fix_height):
       for k in range(fix_width):
-        prtText += "" + ("⬛" if text_array[i] == "□" else "⬜")
+        prtText += "" + ("⬛" if text_array[i] == "#" else "⬜")
         i += 1
       prtText += "\n"
     #os.system('cls')
@@ -42,8 +43,7 @@ def video(text_array, frame_per_time):
     sys.stdout.flush()
     next_time = ((base_time - time.time()) % frame_per_time)
     time.sleep(next_time)
+    fcount += 1
 
 frame_per_time = (duration / frame)
 video(text_array, frame_per_time)
-
-print(text_array)
