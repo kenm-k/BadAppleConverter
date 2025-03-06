@@ -36,8 +36,8 @@ arr = (
 #配列を文字に
 #heightとwidth次第で縦横比を変更できます
 
-fix_height = 19
-fix_width = 19
+fix_height = 29
+fix_width = 29
 
 frame = arr.shape[0]
 text_array = np.full((frame, fix_height, fix_width), None)
