@@ -3,8 +3,12 @@ import sys
 import os
 from platform import system
 from ctypes import windll
+import msvcrt as m
 
 import numpy as np
+
+def wait():
+    m.getch()
 
 text_array = []
 duration = 0
@@ -31,6 +35,20 @@ with open('./badapple.txt') as f:
       else:
         for t in fs[i]:
           text_array.append(t)
+
+os.system('cls')
+print("this is a sample")
+prtText = ""
+for j in range(fix_height):
+    for k in range(fix_width):
+      prtText += "⬜"
+    prtText += "\n"
+print(prtText)
+
+print("You should get this terminal to be full screen")
+print("Are you ready...? press any key...")
+wait()
+os.system('cls')
 
 def video(text_array, frame_per_time):
   base_time = time.time()
